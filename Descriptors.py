@@ -57,11 +57,11 @@ class Descriptor:
     def __set__(self, instance, value):
         if self.name == '__full_name':
             self.verify_full_name(value)
-        if self.name == '__age':
+        elif self.name == '__age':
             self.verify_age(value)
-        if self.name == '__passport_data':
+        elif self.name == '__passport_data':
             self.verify_passport(value)
-        if self.name == '__weight':
+        elif self.name == '__weight':
             self.verify_weight(value)
 
         return setattr(instance, self.name, value)
@@ -78,11 +78,13 @@ class Person:
         self.passport_data = passport_data
         self.weight = weight
 
+    def __str__(self):
+        return f'Name: {self.full_name}\nAge: {self.age}\nPassport data: {self.passport_data}\nWeight: {self.weight}'
+
 if __name__ == '__main__':
     my_person = Person('Плюснин Евгений Владимирович', 27, '5231 143235', 79.2)
-    my_person.age = 119
+    my_person.age = 87
     full_name = my_person.full_name
-    print(full_name)
 
-    print(my_person.__dict__)
+    print(my_person)
 
