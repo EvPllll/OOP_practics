@@ -21,10 +21,10 @@ class MixingLog:
 class Notebook(Goods, MixingLog):
     pass
 
-
-notebook = Notebook('Dell Latitude 3410', 1.5, 40000)
-notebook.show_info()
-notebook.show_log()
-second_notebook = Notebook('some_Asus', 2.0, 45000)
-second_notebook.show_info()
-second_notebook.show_log()
+if __name__ == '__main__':
+    notebook = Notebook('Dell Latitude 3410', 1.5, 40000)
+    notebook.show_info()
+    notebook.show_log()
+    second_notebook = Notebook('some_Asus', 2.0, 45000)
+    second_notebook.show_info()
+    second_notebook.show_log()
